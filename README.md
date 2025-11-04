@@ -1,23 +1,33 @@
 # API de Integração em C# (.NET + SQL)
 
-## 📌 Descrição
-Este projeto é uma API REST desenvolvida em **C# (.NET Core)** que realiza integração entre sistemas de vendas e clientes.  
-O objetivo é demonstrar como criar endpoints seguros e escaláveis para consumo de dados corporativos.
 
-## 🛠️ Tecnologias Utilizadas
-- C# / .NET 6
+📌 Descrição
+API REST em **C# (.NET Core)** que demonstra a integração entre clientes e vendas, com persistência em SQL Server.
+
+
+🛠️ Tecnologias
+- .NET 7
 - Entity Framework Core
 - SQL Server
-- Swagger para documentação
+- Swagger
 
-## 📂 Estrutura do Projeto
-- `/Controllers` → Endpoints da API  
-- `/Models` → Entidades e DTOs  
-- `/Data` → Contexto e repositórios de banco de dados  
 
-## 🚀 Como Executar
-1. Clone o repositório  
-2. Configure a connection string no `appsettings.json`  
-3. Rode as migrations:  
-   ```bash
-   dotnet ef database update
+📂 Como Executar
+1. Configure a connection string no `appsettings.json`
+2. Execute os comandos:
+```bash
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+dotnet run
+```
+3. Acesse [https://localhost:5001/swagger](https://localhost:5001/swagger)
+
+
+## Endpoints
+- `GET /api/clientes`
+- `POST /api/clientes`
+- `GET /api/vendas`
+- `POST /api/vendas`
+
+
+---
